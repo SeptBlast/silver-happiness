@@ -1,0 +1,47 @@
+#!/usr/bin/env node
+
+const http = require("http");
+const debug = require("debug")("silver-happiness:server");
+
+const app = require("../index");
+
+const config = require("../src/config");
+const { logger } = require("../src/utils");
+
+app.set("port", normalizePort(config.port));
+
+var server = http.createServer(app);
+
+function normalizePort(val) {
+	var port = parseInt(val, 10);
+	if (isNaN(port)) return val;
+	if (port >= 0) return port;
+
+	return false;
+}
+
+var onError = (error) => {
+	if (error.syscall !== "listen") throw error;
+	var bind = typeof port === "string" ? "Pipe " + port : "Port " + port;
+	switch (error.code) {
+		case "EACCES":
+			console.error(bind + " requires elevated privileges");
+			process.exit(1);
+			break;
+		case "EADDRINUSE":
+			console.error(bind + " is already in use");
+			process.exit(1);
+			break;
+		default:
+			throw error;
+	}
+};
+
+var onListning = () => {
+	var addr = server.address();
+	var bind = typeof addr === "string" ? "pipe " + addr : "port " + addr.port;
+	debug("Listening on " + bind);
+	logger.info(`Listening on ${bind} 🔥 ...`);
+};
+
+server.listen(config.port).on("error", onError).on("listening", onListning);
