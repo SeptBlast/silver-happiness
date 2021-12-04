@@ -21,9 +21,9 @@ jobs:
                   echo "DOCKER_TAG=${GITHUB_ENV_TAG}"
                   echo $CR_PAT | docker login ghcr.io -u SeptBlast --password-stdin
                   docker build -t ghcr.io/septblast/silver-happiness:latest .
-                  docker run ghcr.io/septblast/silver-happiness:latest
                   docker push ghcr.io/septblast/silver-happiness:latest
               #   docker build -t ghcr.io/septblast/silver-happiness:${GITHUB_ENV_TAG} .
+              #   docker run ghcr.io/septblast/silver-happiness:latest
               #   docker run ghcr.io/septblast/silver-happiness:${GITHUB_ENV_TAG}
               #   docker push ghcr.io/septblast/silver-happiness:${GITHUB_ENV_TAG}
               env:
