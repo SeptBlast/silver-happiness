@@ -5,7 +5,7 @@ RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 COPY . .
-COPY .env.prod .env
+# COPY .env.prod .env
 RUN npm install -g npm@latest
 RUN npm install
 
