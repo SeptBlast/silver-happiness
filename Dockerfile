@@ -12,3 +12,5 @@ RUN npm install
 EXPOSE 80
 
 CMD ["npm", "start"]
+
+LABEL org.opencontainers.image.source="https://github.com/SeptBlast/silver-happiness"
