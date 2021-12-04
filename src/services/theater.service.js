@@ -1,10 +1,15 @@
 const httpStatus = require("http-status");
 
 const { TheaterModel } = require("../models");
+const { environment } = require("../config");
 const { ApiError, logger: log } = require("../utils");
 
+var DEBUG_MODE = environment === "development" ? true : false;
+
 const queryTheaters = async (filter, options) => {
-	return TheaterModel.find(filter, options);
+	var result = await TheaterModel.find(filter, null, options);
+	if (DEBUG_MODE) log.info(result);
+	return result;
 };
 
 const addNewTheater = async (reqBody) => {
@@ -12,11 +17,13 @@ const addNewTheater = async (reqBody) => {
 };
 
 const getTheaterById = async (theaterId) => {
-	return TheaterModel.findById(theaterId);
+	var result = await TheaterModel.findOne({ theaterId: theaterId });
+	if (DEBUG_MODE) log.info(result);
+	return result;
 };
 
 const updateTheaterById = async (theaterId, reqBody) => {
-	const theater = await GetTheaterById(theaterId);
+	const theater = await getTheaterById(theaterId);
 	if (!theater) {
 		throw new ApiError(httpStatus.NOT_FOUND, "Theater not found");
 	}
@@ -27,7 +34,7 @@ const updateTheaterById = async (theaterId, reqBody) => {
 };
 
 const deleteTheaterById = async (theaterId) => {
-	const theater = await GetTheaterById(theaterId);
+	const theater = await getTheaterById(theaterId);
 	if (!theater) {
 		throw new ApiError(httpStatus.NOT_FOUND, "Theater not found");
 	}

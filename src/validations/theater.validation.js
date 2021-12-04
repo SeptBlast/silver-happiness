@@ -2,13 +2,19 @@ const Joi = require("joi");
 
 const addNewTheater = {
 	body: Joi.object().keys({
-		address_city: Joi.string().required(),
-		address_state: Joi.string().required(),
-		address_street1: Joi.string().required(),
-		address_street2: Joi.string().required(),
-		address_zipcode: Joi.string().required(),
-		address_geo_coordinates: Joi.array().items(Joi.number()).required(),
-		address_geo_type: Joi.string().required(),
+		location: Joi.object().keys({
+			address: Joi.object().keys({
+				city: Joi.string().required(),
+				state: Joi.string().required(),
+				street1: Joi.string().required(),
+				street2: Joi.string(),
+				zipcode: Joi.string().required(),
+			}),
+			geo: Joi.object().keys({
+				coordinates: Joi.array().items(Joi.number()).required(),
+				type: Joi.string() || "Point",
+			}),
+		}),
 	}),
 };
 
@@ -17,13 +23,19 @@ const updateTheater = {
 		theater_id: Joi.string().required(),
 	}),
 	body: Joi.object().keys({
-		address_city: Joi.string().required(),
-		address_state: Joi.string().required(),
-		address_street1: Joi.string().required(),
-		address_street2: Joi.string().required(),
-		address_zipcode: Joi.string().required(),
-		address_geo_coordinates: Joi.array().items(Joi.number()).required(),
-		address_geo_type: Joi.string().required(),
+		location: Joi.object().keys({
+			address: Joi.object().keys({
+				city: Joi.string().required(),
+				state: Joi.string().required(),
+				street1: Joi.string().required(),
+				street2: Joi.string(),
+				zipcode: Joi.string().required(),
+			}),
+			geo: Joi.object().keys({
+				coordinates: Joi.array().items(Joi.number()).required(),
+				type: Joi.string() || "Point",
+			}),
+		}),
 	}),
 };
 
