@@ -8,3 +8,5 @@ var logger = config.environment === "development" ? devlogger() : prodlogger();
 module.exports.logger = logger;
 module.exports.CatchAync = catchAync;
 module.exports.ApiError = ApiErrors;
+module.exports.Pick = require("./pick.utils");
+module.exports.ApiFeature = require("./apiFeature.utils");

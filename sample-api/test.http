@@ -4,3 +4,6 @@ GET http://localhost:8080/ping
 
 GET http://localhost:8080/v1/ping
 
+###
+
+GET http://localhost:8080/v1/theater/
