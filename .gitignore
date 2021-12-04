@@ -105,3 +105,5 @@ dist
 
 # Optional File
 .dccache
+.env.prod
+.vscode/*

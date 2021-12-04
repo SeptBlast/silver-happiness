@@ -1,3 +1,5 @@
+###
+
 GET http://localhost:8080/ping
 
 ###
@@ -39,7 +41,7 @@ Content-Type: application/json
 
 ###
 
-PUT http://localhost:8080/v1/theater/find/?theater_id=55435
+PUT http://localhost:8080/v1/theater/find/?theater_id=38433
 Content-Type: application/json
 
 {
@@ -47,7 +49,7 @@ Content-Type: application/json
 		"address": {
 			"street1": "340 W Market",
 			"city": "Bloomington",
-			"state": "MNII",
+			"state": "MNAI",
 			"zipcode": "55425"
 		},
 		"geo": {
@@ -62,5 +64,5 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:8080/v1/theater/find/?theater_id=55435
+DELETE http://localhost:8080/v1/theater/find/?theater_id=38433
 
