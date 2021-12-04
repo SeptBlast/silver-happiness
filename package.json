@@ -7,7 +7,7 @@
 		"debug": "cross-env NODE_ENV=development DEBUG=silver-happiness:* nodemon ./bin/www",
 		"start-test-local": "cross-env NODE_ENV=production DEBUG=silver-happiness:* nodemon ./bin/www",
 		"start": "DEBUG=silver-happiness:* node ./bin/www",
-		"test": "snyk test",
+		"snyk": "snyk test",
 		"format": "npm-run-all -p format:*",
 		"format:code": "npm run prettier:code -- --write",
 		"format:other": "npm run prettier:other -- --write",
