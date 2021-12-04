@@ -28,4 +28,3 @@ jobs:
                   docker push ghcr.io/septblast/silver-happiness:${GITHUB_ENV_TAG}
               env:
                   CR_PAT: ${{ secrets.CR_PAT }}
-                  RELEASE_VERION:
