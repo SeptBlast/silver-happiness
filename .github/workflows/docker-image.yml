@@ -10,10 +10,10 @@ jobs:
 
         steps:
             - uses: actions/checkout@v2
-            - name: Get new Tag Value
-              id: vars
-              run: |
-                  echo "GIT_TAG=`echo $(git describe --tags --abbrev=0)`" >> $GITHUB_ENV_TAG
+            # - name: Get new Tag Value
+            #   id: vars
+            #   run: |
+            #       echo "GIT_TAG=`echo $(git describe --tags --abbrev=0)`" >> $GITHUB_ENV_TAG
 
             - name: Build the Docker image
               run: |
@@ -21,10 +21,10 @@ jobs:
                   echo "DOCKER_TAG=${GITHUB_ENV_TAG}"
                   echo $CR_PAT | docker login ghcr.io -u SeptBlast --password-stdin
                   docker build -t ghcr.io/septblast/silver-happiness:latest .
-                  docker build -t ghcr.io/septblast/silver-happiness:${GITHUB_ENV_TAG} .
                   docker run ghcr.io/septblast/silver-happiness:latest
-                  docker run ghcr.io/septblast/silver-happiness:${GITHUB_ENV_TAG}
                   docker push ghcr.io/septblast/silver-happiness:latest
-                  docker push ghcr.io/septblast/silver-happiness:${GITHUB_ENV_TAG}
+              #   docker build -t ghcr.io/septblast/silver-happiness:${GITHUB_ENV_TAG} .
+              #   docker run ghcr.io/septblast/silver-happiness:${GITHUB_ENV_TAG}
+              #   docker push ghcr.io/septblast/silver-happiness:${GITHUB_ENV_TAG}
               env:
                   CR_PAT: ${{ secrets.CR_PAT }}
