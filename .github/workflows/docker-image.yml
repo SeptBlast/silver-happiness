@@ -30,5 +30,4 @@ jobs:
                   CR_PAT: ${{ secrets.CR_PAT }}
                   GITHUB_ENV_TAG: ${{ github.event.ref }}
                   MONGO_HOST: ${{ secrets.MONGO_HOST }}
-                  MONGO_PORT: ${{ secrets.MONGO_PORT }}
                   MONGO_DB_NAME: ${{ secrets.MONGO_DB_NAME }}
