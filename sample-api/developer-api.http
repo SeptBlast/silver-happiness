@@ -1,0 +1,68 @@
+###
+
+GET http://localhost:8080/ping
+
+###
+
+GET http://localhost:8080/v1/ping
+
+###
+
+GET http://localhost:8080/v1/theater/?limit=10&page=1
+
+
+###
+
+GET http://localhost:8080/v1/theater/find/?theater_id=1000
+
+
+###
+
+POST https://localhost:8080/v1/theater/
+Content-Type: application/json
+
+{
+    "location": {
+        "address": {
+            "street1": "340 W Market",
+            "city": "Bloomington",
+            "state": "MNAI",
+            "zipcode": "55425"
+        },
+        "geo": {
+            "type": "Point",
+            "coordinates": [
+                -93.24565,
+                44.85466
+            ]
+        }
+    }
+}
+
+###
+
+PUT http://localhost:8080/v1/theater/find/?theater_id=88282
+Content-Type: application/json
+
+{
+	"location": {
+		"address": {
+			"street1": "340 W Market",
+			"city": "Bloomington",
+			"state": "MN",
+			"zipcode": "55425"
+		},
+		"geo": {
+			"type": "Point",
+			"coordinates": [
+				-90.24565,
+				24.85466
+			]
+		}
+	}
+}
+
+###
+
+DELETE http://localhost:8080/v1/theater/find/?theater_id=38433
+

@@ -1,24 +1,24 @@
 ###
 
-GET http://localhost:8080/ping
+GET http://silver-happiness.herokuapp.com/ping
 
 ###
 
-GET http://localhost:8080/v1/ping
+GET http://silver-happiness.herokuapp.com/v1/ping
 
 ###
 
-GET http://localhost:8080/v1/theater/?limit=10&page=1
-
-
-###
-
-GET http://localhost:8080/v1/theater/find/?theater_id=1000
+GET http://silver-happiness.herokuapp.com/v1/theater/?limit=10&page=1
 
 
 ###
 
-POST http://localhost:8080/v1/theater/
+GET http://silver-happiness.herokuapp.com/v1/theater/find/?theater_id=1000
+
+
+###
+
+POST https://silver-happiness.herokuapp.com/v1/theater/
 Content-Type: application/json
 
 {
@@ -41,7 +41,7 @@ Content-Type: application/json
 
 ###
 
-PUT http://localhost:8080/v1/theater/find/?theater_id=38433
+PUT http://silver-happiness.herokuapp.com/v1/theater/find/?theater_id=88282
 Content-Type: application/json
 
 {
@@ -49,14 +49,14 @@ Content-Type: application/json
 		"address": {
 			"street1": "340 W Market",
 			"city": "Bloomington",
-			"state": "MNAI",
+			"state": "MN",
 			"zipcode": "55425"
 		},
 		"geo": {
 			"type": "Point",
 			"coordinates": [
-				-93.24565,
-				44.85466
+				-90.24565,
+				24.85466
 			]
 		}
 	}
@@ -64,5 +64,5 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:8080/v1/theater/find/?theater_id=38433
+DELETE http://silver-happiness.herokuapp.com/v1/theater/find/?theater_id=38433
 
