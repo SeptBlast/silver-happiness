@@ -5,18 +5,29 @@
 [![OSSAR](https://github.com/SeptBlast/silver-happiness/actions/workflows/ossar-analysis.yml/badge.svg)](https://github.com/SeptBlast/silver-happiness/actions/workflows/ossar-analysis.yml)
 [![Publish Container Image](https://github.com/SeptBlast/silver-happiness/actions/workflows/docker-image.yml/badge.svg)](https://github.com/SeptBlast/silver-happiness/actions/workflows/docker-image.yml)
 [![Deploy to Heroku](https://github.com/SeptBlast/silver-happiness/actions/workflows/heroku-deploy.yml/badge.svg)](https://github.com/SeptBlast/silver-happiness/actions/workflows/heroku-deploy.yml)
+[![CC0 1.0 Universal](https://img.shields.io/badge/license-CCO%201.0%20Universal-339931?logo=Read%20the%20Docs)](./LICENSE)
 
 ## Stack Used
 
 ![NodeJs](https://img.shields.io/badge/Node.js-v16.13.0-339933?logo=Node.js)
 ![Express](https://img.shields.io/badge/Express-v4.17.1-000000?logo=Express)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES2016-F7DF1E?logo=JavaScript)
+![lint](https://img.shields.io/badge/Eslint-v8.3.0-4B32C3?logo=ESLint)
+![prettier](https://img.shields.io/badge/Prettier-v2.5.0-F7B93E?logo=Prettier)
+
+## Tools Used
+
 ![MongoDB](https://img.shields.io/badge/MongoDB-v4.4.10-47a248?logo=MongoDB)
 ![Heroku](https://img.shields.io/badge/Heroku-v7.59.2-430098?logo=Heroku)
 ![Snyk](https://img.shields.io/badge/Snyk-v1.22.1-4c4a73?logo=Snyk)
+![VS Code](https://img.shields.io/badge/VS%20Code-v1.62.3-007ACC?logo=Visual%20Studio%20Code)
+![GitHub](https://img.shields.io/badge/GitHub-v2.20.0-181717?logo=GitHub)
+![Github Actions](https://img.shields.io/badge/GitHub%20Actions-v2.0.0-2088FF?logo=GitHub%20Actions)
+![Docker](https://img.shields.io/badge/Docker-v20.10.10-2496ED?logo=Docker)
 
 #
 
-## Developer Instruuctions
+## Developer Instructions
 
 ### [PreChecks](#prechecks)
 
@@ -63,8 +74,7 @@ For the shake of deployment we are going to use `Github Actions` to deploy the a
 
 In the folder there are 3 CI/CD actions written in the following order.
 
--   [`ossar-analysis`](https://github.com/SeptBlast/silver-happiness/blob/main/.github/workflows/ossar-analysis.yml)
-    is used to run the OSSAR analysis on the application which helps in analyzing code and the vulnerabilites of its dependencies.
+-   [`ossar-analysis`](https://github.com/SeptBlast/silver-happiness/blob/main/.github/workflows/ossar-analysis.yml) is used to run the OSSAR analysis on the application which helps in analyzing code and the vulnerabilites of its dependencies.
 -   [`docker-image`](https://github.com/SeptBlast/silver-happiness/blob/main/.github/workflows/docker-image.yml) is used to build the docker image and it deploy that docker image in github container image repository.
 -   [`heroku-deploy`](https://github.com/SeptBlast/silver-happiness/blob/main/.github/workflows/heroku-deploy.yml) is used to deploy the application to Heroku.
 
@@ -334,6 +344,6 @@ StatusCode: 204
 
 ## License
 
-[![CC0 1.0 Universal](https://img.shields.io/badge/CCO1.0Universal-v1.0-4c4a73)](./LICENSE)
+[![CC0 1.0 Universal](https://img.shields.io/badge/license-CCO%201.0%20Universal-339933)](./LICENSE)
 
 # [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FSeptBlast%2Fsilver-happiness.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FSeptBlast%2Fsilver-happiness?ref=badge_large)
