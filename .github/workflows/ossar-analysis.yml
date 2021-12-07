@@ -2,7 +2,7 @@ name: OSSAR
 
 on:
     schedule:
-        - cron: "42 23 * * 3"
+        - cron: "42 23 * * *"
 
 jobs:
     OSSAR-Scan:
